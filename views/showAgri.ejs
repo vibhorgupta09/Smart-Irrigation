@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>..</title>
+</head>
+<body>
+    <h4><%=agriInfo.cropName%></h4>
+    <br>
+
+    <h3>Add new reading</h3>
+        <br>
+        <form action="/agriInfo/<%= agriInfo._id %>/readings" method="post">
+            <div>
+                <label for="readingVal" class="form-label">reading value on tensiometer (in cBAR)</label>
+                <input type="text" id="readingVal" name="readingVal">
+            </div>
+            <div>
+                <label for="date" class="form-label">date of checking (month-day-year)</label>
+                <input type="text" id="date" name="date">
+            </div>
+            <div>
+                <br>
+                <button>Submit</button>
+                <br>
+            </div>
+            <br>
+        </form>
+
+
+        <hr>
+        <h3>All readings</h3>
+        <div class="row">
+        <%for(reading of agriInfo.readings){ %>
+            <div class="card col-5 ms-3 mb-3">
+                <div class="card-body">
+                    <p class="card-text">irrigation date : <%= reading.date %></p>
+                    <p class="card-text">Tensiometer reading (in cBAR): <%= reading.readingVal %></p>
+                    <p class="card-text">To Be Irrigated : <%= reading.output %></p>
+                    <p class="card-text">Feedback : <%= reading.feedback %></p>
+                </div>
+                <br>
+            </div>
+        <% } %>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>..</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <div>
+        
+    </div>
+    <form action="agriInfo/new" method="get">
+        <button>Grow new crop</button>
+    </form>
+    <% for(let agriInfo of agriInfos){ %>
+        <div >
+            <p>cropName: <%= agriInfo.cropName %></p>
+        <p>soil:<%= agriInfo.soil %></p>
+        <p>location: <%= agriInfo.location %></p>
+        <p>irrigationSystem :<%= agriInfo.irrigationSystem %></p>
+        <p>area (hectare):<%= agriInfo.area %></p>
+        <p>season: <%= agriInfo.season %></p>
+        
+        <form action="/agriInfo/<%=agriInfo._id%>" method="get">
+            <button>DETAILS</button>
+        </form>
+<br>
+        <form action="/agriInfo/<%=agriInfo._id%>?_method=DELETE" method="post">
+            <button>DELETE</button>
+        </form>
+        <hr>
+        </div>
+    <% } %>
+</body>
+</html>

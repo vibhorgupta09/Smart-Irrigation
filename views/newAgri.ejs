@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new chat</title>
+</head>
+<body>
+    <h4>Enter new crop information that is to be grown</h4>
+    <form action="/agriInfo" method="post">
+        <input type="text" name="cropName" placeholder="enter crop name">
+        <br>
+        <input type="text" name="soil" placeholder="enter soil type">
+        <br>
+        <input type="text" name="location" placeholder="enter location">
+        <br>
+        <input type="text" name="irrigationSystem" placeholder="enter irrigation system type">
+        <br>
+        <input type="text" name="area" placeholder="enter area in hectare">
+        <br>
+        <label>
+            <input type="radio" name="season" value="summer" required>
+            Summer
+        </label>
+        <label>
+            <input type="radio" name="season" value="winter">
+            Winter
+        </label><br>
+        <br>
+        <button>Add</button>
+    </form>
+</body>
+</html>
